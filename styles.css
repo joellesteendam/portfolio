@@ -1,0 +1,348 @@
+/* styles.css */
+
+/* !!still have to fix the font !!*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:'Times New Roman', Times, serif; 
+    font-weight: light;
+    background-color: #ffffff;
+    color: #000000;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
+    z-index: 1000; 
+    padding: 10px 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-button{
+    text-decoration: none;
+    color: #000000;
+    padding: 10px 20px;
+    font-size: 20px; 
+}
+
+.info-button {
+    display: none;
+    text-decoration: none;
+    text-align: right;
+    color: #000;
+    padding: 10px 20px;
+    font-size: 20px; 
+}
+
+#menu-close {
+    display: none;
+}
+
+.body-menu-open {
+    .menu-close {
+        display: block;
+    }
+
+    .menu-open {
+        display: none;
+    }
+}
+
+.project-button{
+    text-decoration: none;
+    color: #000000;
+    font-size: 16px; 
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 70px 20px 20px;
+}
+
+
+.left-column {
+    background: #fff;
+    width: 100%; 
+    padding: 100px 50px 10px 20px;
+    top: 0; 
+    position: fixed; 
+    transform: translateY(-100%);
+    transition: transform ease .2s;
+    bottom: 0; 
+}
+
+.left-column.open {
+    transform: translate(0)
+}
+
+.middle-column {
+    width: 100%; 
+    text-align: justify;
+}
+
+.left-column img {
+    max-width: 100%; 
+    height: auto;
+    margin-bottom: 40px;
+}
+
+.right-column {
+    width: 100%; 
+    padding: 10px 0;
+    bottom: 0;
+    right: 0;
+    text-align: justify;
+}
+
+.right-column p {
+    margin-bottom: 0.5em; 
+}
+
+.middle-column img {
+    max-width: 100%; 
+    height: auto;
+    margin-bottom: 2vw;
+}
+
+.middle-column video {
+    width: 100%; 
+    height: auto; 
+    margin-bottom: 40px;
+}
+
+.projects-title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: medium;
+    font-size: 14px; 
+
+    a {
+        color: #000;
+        text-decoration: none;
+    }
+}
+
+/* hover to select projects*/
+.left-column a.project-button {
+    color: #9a9a9a; 
+    transition: color 0.2s; 
+}
+.left-column a.project-button:hover {
+    color: #000000; 
+}
+.left-column a.project-button.selected {
+    color: #000000; 
+}
+
+.sub-title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: medium;
+    font-size: 14px; 
+}
+
+/* Index page specific styles */
+.index-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;  /* Ensure it takes at least the full height of the viewport */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.image-container-index {
+    width: 100%;  /* Adjust as necessary */
+    max-width: 800px; /* Maximum width of the content area */
+    margin: auto; /* Helps in horizontal centering if not already centered by flex */
+    position: relative; /* For absolute positioning of arrows */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 600px; /* Fixed height as per your image dimensions */
+    padding: 0 20px;
+}
+
+.image-container-index img {
+    width: 100%;    /* Fixed width for all images */
+    height: 750px;   /* Fixed height for all images */
+    object-fit: contain; /* Ensures the image is scaled to maintain its aspect ratio while fitting within the element */
+}
+
+.caption-index {
+    font-size: 18px;
+    color: #000000;
+    margin-top: 16px; /* Space between image and caption */
+}
+
+.arrow-index {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%; /* Responsive area for cursor change */
+    height: 100%; /* Full height of container */
+    background-color: transparent; /* Invisible */
+    z-index: 10;
+    opacity: 0%;
+}
+
+.left-index {
+    left: 0;
+    cursor: url('index/arrowL.png'), auto; /* Use auto as fallback */
+}
+
+.right-index {
+    right: 0;
+    cursor: url('index/arrowR.png'), auto; /* Use auto as fallback */
+}
+
+.arrow-index:hover {
+    background-color: rgba(255, 255, 255, 0); /* Hover effect for better visibility */
+}
+
+
+.scroll-instruction {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    color: #b5b5b5;
+    font-size: 16px;
+    z-index: 100; /* Ensure it is visible above other content */
+}
+
+
+/* timeline stuff for the about page*/
+.timeline {
+    position: relative;
+    margin: 20px 0;
+    padding-left: 30px;
+    border-left: 1.5px solid #000;
+}
+
+.timeline-event {
+    position: relative;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.timeline-dot {
+    position: absolute;
+    top: 14px;
+    width: 12px;
+    height: 12px;
+    background-color: #fff; 
+    border: 1.5px solid #000; 
+    border-radius: 50%;
+    transform: translateX(-50%); 
+    left: -30px;
+    margin-right: 8px;
+}
+
+.timeline-content {
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
+}
+
+/* Back to Top Button */
+.back-to-top-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-to-top {
+    display: inline-block;
+    padding: 10px 20px;
+    font-style: italic;
+    text-decoration: none;
+    color: #000;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+/* Next project button */
+.next-project-container {
+    text-align: center;
+    margin-top: -40px; /* Adjust margin as needed */
+    margin-bottom: 40px; /* Match the margin of the middle column */
+    color: #000000;
+    font-style: italic;
+    transition: all 0.3s ease;
+}
+
+@media screen and (min-width: 768px) {
+    #menu {
+        display: none;
+    }
+
+    .info-button {
+        display: block;
+    }
+
+    .hide-tablet {
+        display: none;
+    }
+
+    .left-column {
+        position: fixed; 
+        padding-top: 50px;
+        transform: translate(0);
+        top: 50px;
+        width: 30%;
+    }
+    
+    .middle-column {
+        margin-left: 35%;
+        width: 70%; 
+    }
+    
+    .right-column {
+        margin-left: 35%;
+        width: 70%; 
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+
+    .left-column {
+        padding-top: 10px;
+        position: fixed; 
+        transform: translate(0);
+        top: 80px; 
+        width: 25%; 
+    }
+    
+    .middle-column {
+        margin-left: 25%;
+        padding: 10px;
+        width: 45%; 
+    }
+    
+    .right-column {
+        overflow-y: scroll;
+        max-height: 90vh;
+        padding: 10px 40px;
+        position: fixed; 
+        width: 30%; 
+    }
+}
